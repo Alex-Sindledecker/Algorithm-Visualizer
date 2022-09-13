@@ -15,24 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="BubbleSort.cpp">
+    <ClCompile Include="src\Algorithms\Lists\BubbleSort.cpp">
       <Filter>src\Algorithms\Lists</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IAlgBase.h">
+    <ClInclude Include="src\Algorithms\IAlgBase.h">
       <Filter>src\Algorithms</Filter>
     </ClInclude>
-    <ClInclude Include="ListSortBase.h">
+    <ClInclude Include="src\Algorithms\Lists\ListSortBase.h">
       <Filter>src\Algorithms\Lists</Filter>
     </ClInclude>
-    <ClInclude Include="BubbleSort.h">
+    <ClInclude Include="src\Algorithms\Lists\BubbleSort.h">
       <Filter>src\Algorithms\Lists</Filter>
     </ClInclude>
-    <ClInclude Include="ListSortVisualizer.h">
+    <ClInclude Include="src\Rendering\Visualizers\ListSortVisualizer.h">
       <Filter>src\Rendering</Filter>
     </ClInclude>
   </ItemGroup>

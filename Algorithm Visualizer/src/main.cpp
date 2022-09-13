@@ -4,7 +4,7 @@
 #include <queue>
 #include <iostream>
 
-#include "BubbleSort.h"
+#include "Algorithms/Lists/BubbleSort.h"
 
 int main()
 {

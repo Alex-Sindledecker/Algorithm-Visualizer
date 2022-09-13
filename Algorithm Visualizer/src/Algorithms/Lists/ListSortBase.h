@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IAlgBase.h"
+#include "../IAlgBase.h"
 
 #include <vector>
 #include <queue>
