@@ -21,6 +21,9 @@
     <ClCompile Include="src\Algorithms\Lists\BubbleSort.cpp">
       <Filter>src\Algorithms\Lists</Filter>
     </ClCompile>
+    <ClCompile Include="src\Rendering\Visualizers\ListSortVisualizer.cpp" />
+    <ClCompile Include="src\Rendering\Animation.cpp" />
+    <ClCompile Include="src\Rendering\Visualizers\VisualizerBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algorithms\IAlgBase.h">
@@ -35,5 +38,7 @@
     <ClInclude Include="src\Rendering\Visualizers\ListSortVisualizer.h">
       <Filter>src\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rendering\Visualizers\VisualizerBase.h" />
+    <ClInclude Include="src\Rendering\Animation.h" />
   </ItemGroup>
 </Project>

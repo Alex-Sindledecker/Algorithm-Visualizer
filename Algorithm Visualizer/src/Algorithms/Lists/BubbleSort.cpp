@@ -8,8 +8,19 @@ BubbleSort::BubbleSort(std::vector<float> dataSet) : ListSortBase(dataSet)
 
 void BubbleSort::enqueueState()
 {
+    stateCount++;
     m_states.push(SortState{ m_data, m_activeIndices });
     m_activeIndices.clear();
+}
+
+Complexity BubbleSort::getTimeComplexity()
+{
+    return Complexity::O_N2;
+}
+
+Complexity BubbleSort::getSpaceComplexity()
+{
+    return Complexity::O_1;
 }
 
 void BubbleSort::sort()

@@ -2,11 +2,14 @@
 
 #include "ListSortBase.h"
 
-class BubbleSort : public ListSortBase<float>
+class BubbleSort : public ListSortBase
 {
 public:
     BubbleSort(std::vector<float> dataSet);
-    virtual void enqueueState() override;
+
+    void enqueueState() override;
+    Complexity getTimeComplexity() override;
+    Complexity getSpaceComplexity() override;
     void sort() override;
 
 private:

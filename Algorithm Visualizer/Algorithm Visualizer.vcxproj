@@ -82,7 +82,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)/dependencies/SFML-2.5.1-windows-vc15-64-bit/SFML-2.5.1/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -117,7 +117,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)/dependencies/SFML-2.5.1-windows-vc15-64-bit/SFML-2.5.1/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,12 +148,17 @@
   <ItemGroup>
     <ClCompile Include="src\Algorithms\Lists\BubbleSort.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Rendering\Animation.cpp" />
+    <ClCompile Include="src\Rendering\Visualizers\ListSortVisualizer.cpp" />
+    <ClCompile Include="src\Rendering\Visualizers\VisualizerBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Algorithms\Lists\BubbleSort.h" />
     <ClInclude Include="src\Algorithms\IAlgBase.h" />
     <ClInclude Include="src\Algorithms\Lists\ListSortBase.h" />
+    <ClInclude Include="src\Rendering\Animation.h" />
     <ClInclude Include="src\Rendering\Visualizers\ListSortVisualizer.h" />
+    <ClInclude Include="src\Rendering\Visualizers\VisualizerBase.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

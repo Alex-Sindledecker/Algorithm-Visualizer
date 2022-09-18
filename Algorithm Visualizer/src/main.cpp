@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include "Algorithms/Lists/BubbleSort.h"
+#include "Rendering/Visualizers/ListSortVisualizer.h"
 
 int main()
 {
@@ -19,8 +20,8 @@ int main()
     for (int i = 0; i < dataSetSize; i++)
         dataSet[i] = (float)rand() / (float)RAND_MAX;
 
-    BubbleSort visualizer(dataSet);
-    visualizer.sort();
+    ListSortVisualizer visualizer = createListVisualizer<BubbleSort>(dataSetSize);
+    visualizer.setRenderTarget(&window);
 
     sf::RectangleShape rect;
 
@@ -32,30 +33,12 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
             if (event.type == sf::Event::KeyPressed)
-            {
-                if (event.key.code == sf::Keyboard::Space)
-                    visualizer.dequeueState();
-            }
+                visualizer.play();
         }
 
         window.clear();
         
-        if (visualizer.isStateRemaining())
-        {
-            auto state = visualizer.peek();
-
-            for (int i = 0; i < state.data.size(); i++)
-            {
-                const int blockWidth = 8;
-                const int blockHeight = state.data[i] * maxBlockHeight + 10;
-
-                rect.setFillColor(sf::Color::White);
-                rect.setPosition(sf::Vector2f(i * 10 + 1, window.getSize().y - blockHeight));
-                rect.setSize(sf::Vector2f(blockWidth, blockHeight));
-
-                window.draw(rect);
-            }
-        }
+        visualizer.render();
 
         window.display();
     }
