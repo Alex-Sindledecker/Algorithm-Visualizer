@@ -6,12 +6,6 @@ BubbleSort::BubbleSort(std::vector<float> dataSet) : ListSortBase(dataSet)
     enqueueState();
 }
 
-void BubbleSort::enqueueState()
-{
-    m_states.push(SortState{ m_data, m_activeIndices });
-    m_activeIndices.clear();
-}
-
 Complexity BubbleSort::getTimeComplexity()
 {
     return Complexity::O_N2;

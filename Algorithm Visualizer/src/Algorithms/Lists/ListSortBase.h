@@ -20,6 +20,7 @@ public:
 public:
     ListSortBase(const std::vector<float>& dataSet);
 
+    virtual void enqueueState();
     virtual bool dequeueState();
     virtual SortState peek() const;
     virtual int statesRemaining() const;
@@ -30,6 +31,7 @@ public:
     virtual void sort() = 0;
 
 protected:
+    std::unordered_map<int, ActiveElementState> m_activeIndices;
     std::queue<SortState> m_states;
     std::vector<float> m_data;
 };

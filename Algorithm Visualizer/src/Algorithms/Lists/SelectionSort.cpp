@@ -38,9 +38,3 @@ void SelectionSort::sort()
         }
     }
 }
-
-void SelectionSort::enqueueState()
-{
-    m_states.push(SortState{ m_data, m_activeIndices });
-    m_activeIndices.clear();
-}

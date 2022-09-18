@@ -6,12 +6,6 @@ InsertionSort::InsertionSort(std::vector<float> dataSet) : ListSortBase(dataSet)
     enqueueState();
 }
 
-void InsertionSort::enqueueState()
-{
-    m_states.push(SortState{ m_data, m_activeIndices });
-    m_activeIndices.clear();
-}
-
 Complexity InsertionSort::getTimeComplexity()
 {
     return Complexity::O_N2;

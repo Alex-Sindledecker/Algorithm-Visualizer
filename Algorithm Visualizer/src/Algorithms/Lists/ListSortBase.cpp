@@ -5,6 +5,12 @@ ListSortBase::ListSortBase(const std::vector<float>& dataSet)
     m_data = dataSet;
 }
 
+void ListSortBase::enqueueState()
+{
+    m_states.push(SortState{ m_data, m_activeIndices });
+    m_activeIndices.clear();
+}
+
 bool ListSortBase::dequeueState()
 {
     m_states.pop();
