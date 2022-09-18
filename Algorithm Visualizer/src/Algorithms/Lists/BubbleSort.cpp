@@ -22,11 +22,11 @@ void BubbleSort::sort()
     {
         for (int n = 0; n < m_data.size() - 1; n++)
         {
+            m_activeIndices[n] = ActiveElementState::PRIMARY;
+            m_activeIndices[n + 1] = ActiveElementState::SECONDARY;
+
             if (m_data[n] > m_data[n + 1])
             {
-                m_activeIndices[n] = ActiveElementState::PRIMARY;
-                m_activeIndices[n + 1] = ActiveElementState::SECONDARY;
-
                 //Swap
                 float temp = m_data[n];
                 m_data[n] = m_data[n + 1];

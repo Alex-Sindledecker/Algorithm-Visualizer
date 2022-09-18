@@ -10,7 +10,4 @@ public:
     Complexity getTimeComplexity() override;
     Complexity getSpaceComplexity() override;
     void sort() override;
-
-private:
-    std::unordered_map<int, ActiveElementState> m_activeIndices;
 };

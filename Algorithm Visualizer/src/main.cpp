@@ -22,7 +22,7 @@ int main()
     for (int i = 0; i < dataSetSize; i++)
         dataSet[i] = (float)rand() / (float)RAND_MAX;
 
-    ListSortVisualizer visualizer = createListVisualizer<InsertionSort>(dataSetSize);
+    ListSortVisualizer visualizer = createListVisualizer<SelectionSort>(dataSetSize);
     visualizer.setRenderTarget(&window);
 
     while (window.isOpen())
