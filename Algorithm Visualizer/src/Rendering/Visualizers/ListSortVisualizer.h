@@ -9,12 +9,6 @@
 #include "../../Algorithms/Lists/BubbleSort.h"
 #include "VisualizerBase.h"
 
-#define _CREATE_VISUALIZER_FUNC_DEF_(VisualizerT, FuncName, AlgTBase, DataSetT) template<class AlgT, typename = std::enable_if_t<std::is_base_of<AlgTBase, AlgT>::value, bool>>\
-VisualizerT FuncName(DataSetT dataSet)\
-{\
-	return VisualizerT(std::unique_ptr<AlgT>(new AlgT(dataSet)));\
-}
-
 class ListSortVisualizer : public VisualizerBase
 {
 public:
@@ -39,8 +33,6 @@ ListSortVisualizer createListVisualizer(std::vector<float> dataSet)
 {
 	return ListSortVisualizer(std::unique_ptr<SortAlgT>(new SortAlgT(dataSet)));
 }
-
-//_CREATE_VISUALIZER_FUNC_DEF_1_(ListSortVisualizer, createListVisualizer, ListSortBase, std::vector<float>)
 
 //Creates a list sort visualizer from a random dataset
 template<class SortAlgT, typename = std::enable_if_t<std::is_base_of<ListSortBase, SortAlgT>::value, bool>>

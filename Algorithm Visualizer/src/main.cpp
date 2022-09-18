@@ -25,8 +25,6 @@ int main()
     ListSortVisualizer visualizer = createListVisualizer<InsertionSort>(dataSetSize);
     visualizer.setRenderTarget(&window);
 
-    sf::RectangleShape rect;
-
     while (window.isOpen())
     {
         sf::Event event;
