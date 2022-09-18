@@ -2,10 +2,10 @@
 
 #include "ListSortBase.h"
 
-class BubbleSort : public ListSortBase
+class InsertionSort : public ListSortBase
 {
 public:
-    BubbleSort(std::vector<float> dataSet);
+    InsertionSort(std::vector<float> dataSet);
 
     void enqueueState() override;
     Complexity getTimeComplexity() override;

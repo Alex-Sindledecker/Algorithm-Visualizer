@@ -10,7 +10,7 @@ ListSortVisualizer::ListSortVisualizer(std::unique_ptr<ListSortBase> algorithm)
 	algorithm.swap(m_algorithm);
 
 	m_algorithm->sort();
-	m_animation.setAnimationSteps(m_algorithm->stateCount);
+	m_animation.setAnimationSteps(m_algorithm->statesRemaining());
 	m_animation.setAnimationDuration(DEFAULT_ANIMATION_DURATION);
 }
 
@@ -23,7 +23,7 @@ ListSortVisualizer::ListSortVisualizer(ListSortVisualizer&& old) noexcept
 
 void ListSortVisualizer::safeRender()
 {
-	if (m_algorithm->isStateRemaining())
+	if (m_algorithm->statesRemaining() > 0)
 	{
 		auto state = m_algorithm->peek();
 
@@ -32,7 +32,26 @@ void ListSortVisualizer::safeRender()
 			const int blockWidth = 8;
 			const int blockHeight = state.data[i] * MAX_BLOCK_HEIGHT + 10;
 
-			m_rect.setFillColor(sf::Color::White);
+			if (state.activeIndices.find(i) != state.activeIndices.end())
+			{
+				switch (state.activeIndices[i])
+				{
+				case ActiveElementState::PRIMARY:
+					m_rect.setFillColor(sf::Color::Green);
+					break;
+				case ActiveElementState::SECONDARY:
+					m_rect.setFillColor(sf::Color::Red);
+					break;
+				case ActiveElementState::ALTERNATE:
+					m_rect.setFillColor(sf::Color(127, 127, 127));
+					break;
+				default:
+					m_rect.setFillColor(sf::Color::White);
+				}
+			}
+			else
+				m_rect.setFillColor(sf::Color::White);
+
 			m_rect.setPosition(sf::Vector2f(i * 10 + 1, m_window->getSize().y - blockHeight));
 			m_rect.setSize(sf::Vector2f(blockWidth, blockHeight));
 
@@ -43,8 +62,8 @@ void ListSortVisualizer::safeRender()
 
 void ListSortVisualizer::safeUpdate()
 {
-	m_algorithm->dequeueState();
-	std::cout << "updated..." << std::endl;
+	if (m_algorithm->statesRemaining() > 1)
+		m_algorithm->dequeueState();
 }
 
 AlgStats ListSortVisualizer::safeGetStats()

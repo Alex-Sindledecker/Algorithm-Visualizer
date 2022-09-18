@@ -5,6 +5,8 @@
 #include <iostream>
 
 #include "Algorithms/Lists/BubbleSort.h"
+#include "Algorithms/Lists/SelectionSort.h"
+#include "Algorithms/Lists/InsertionSort.h"
 #include "Rendering/Visualizers/ListSortVisualizer.h"
 
 int main()
@@ -20,7 +22,7 @@ int main()
     for (int i = 0; i < dataSetSize; i++)
         dataSet[i] = (float)rand() / (float)RAND_MAX;
 
-    ListSortVisualizer visualizer = createListVisualizer<BubbleSort>(dataSetSize);
+    ListSortVisualizer visualizer = createListVisualizer<InsertionSort>(dataSetSize);
     visualizer.setRenderTarget(&window);
 
     sf::RectangleShape rect;
@@ -31,7 +33,9 @@ int main()
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
+            {
                 window.close();
+            }
             if (event.type == sf::Event::KeyPressed)
                 visualizer.play();
         }

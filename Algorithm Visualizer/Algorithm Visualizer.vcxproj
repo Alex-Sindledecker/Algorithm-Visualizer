@@ -147,6 +147,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Algorithms\Lists\BubbleSort.cpp" />
+    <ClCompile Include="src\Algorithms\Lists\InsertionSort.cpp" />
+    <ClCompile Include="src\Algorithms\Lists\ListSortBase.cpp" />
+    <ClCompile Include="src\Algorithms\Lists\SelectionSort.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Rendering\Animation.cpp" />
     <ClCompile Include="src\Rendering\Visualizers\ListSortVisualizer.cpp" />
@@ -155,7 +158,9 @@
   <ItemGroup>
     <ClInclude Include="src\Algorithms\Lists\BubbleSort.h" />
     <ClInclude Include="src\Algorithms\IAlgBase.h" />
+    <ClInclude Include="src\Algorithms\Lists\InsertionSort.h" />
     <ClInclude Include="src\Algorithms\Lists\ListSortBase.h" />
+    <ClInclude Include="src\Algorithms\Lists\SelectionSort.h" />
     <ClInclude Include="src\Rendering\Animation.h" />
     <ClInclude Include="src\Rendering\Visualizers\ListSortVisualizer.h" />
     <ClInclude Include="src\Rendering\Visualizers\VisualizerBase.h" />
